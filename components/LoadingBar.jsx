@@ -8,8 +8,8 @@ const LoadingBar = () => {
     <div className='w-full h-full'>
       <ScaleLoader
         color='red'
-        width='23'
-        margin='3'
+        width={10}
+        margin={3}
         cssOverride={{ textAlign: 'center', marginTop: '50vh' }}
       />
     </div>
