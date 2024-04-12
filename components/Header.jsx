@@ -79,7 +79,7 @@ const Header = ({ children }) => {
       >
         <PagePadding>
           <div className='h-[64px] flex flex-row justify-between items-center'>
-            <article className='h-[42px] min-w-[480px] flex-row justify-between items-center bg-[rgba(0,0,0,0.14)] rounded-2xl px-[16px] gap-[16px] border border-neutral-500 hidden lg:flex'>
+            <article className='h-[42px] min-w-[480px] flex-row items-center bg-[rgba(0,0,0,0.14)] rounded-2xl px-[16px] gap-[16px] border border-neutral-500 hidden lg:flex'>
               <div>
                 <FiSearch size={24} />
               </div>
