@@ -9,13 +9,25 @@ import {
 } from '@/components/ui/carousel';
 
 import PlayListCard from './PlayListCard';
+import { chunkArray } from '@/lib/utils';
+import SongCard from './SongCard';
 
 interface SongListCarouselProps {
   title: string;
   subTitle?: string;
   thumbnail?: React.ReactNode;
-  songListTop10?: TopSong[];
+  songListTop10: TopSong[];
 }
+
+const SongColumn = ({ songList = [] }: { songList: TopSong[] }) => {
+  return (
+    <div className='flex flex-col gap-4'>
+      {songList.map((song, idex) => {
+        return <SongCard key={idex} song={song} />;
+      })}
+    </div>
+  );
+};
 
 const SongListCarousel: React.FC<SongListCarouselProps> = ({
   title,
@@ -23,8 +35,9 @@ const SongListCarousel: React.FC<SongListCarouselProps> = ({
   thumbnail,
   songListTop10,
 }) => {
+  const chunkedTop10SongList = chunkArray(songListTop10, 4) as TopSong[][];
   return (
-    <div className='w-full '>
+    <div className='w-full'>
       <Carousel>
         <div className='flex flex-row justify-between items-end my-2'>
           <article className='flex flex-row gap-3'>
@@ -39,26 +52,21 @@ const SongListCarousel: React.FC<SongListCarouselProps> = ({
             </div>
           </article>
           <div className='relative left-[-45px]'>
-            <div className='absolute bottom-20px'>
+            <div className='absolute bottom-[20px]'>
               <CarouselPrevious className='right-2' />
               <CarouselNext className='left-2' />
             </div>
           </div>
         </div>
-        <CarouselContent>
-          {songListTop10?.map((playlist, index) => {
+        <CarouselContent className='mt-4'>
+          {chunkedTop10SongList?.map((songList, index) => {
             return (
-              <CarouselItem
-                key={index}
-                className='basis-1/2 md:basis-1/3 lg:basis-1/4'
-              >
-                <PlayListCard playlist={playlist} />
+              <CarouselItem key={index} className='lg:basis-1/2'>
+                <SongColumn songList={songList} />
               </CarouselItem>
             );
           })}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </div>
   );
