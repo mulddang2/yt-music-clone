@@ -8,6 +8,7 @@ const nextConfig = {
       },
     ],
   },
+  basePath: '/yt-music-clone',
 };
 
 export default nextConfig;
