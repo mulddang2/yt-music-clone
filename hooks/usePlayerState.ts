@@ -6,7 +6,7 @@ interface PlayerState {
 }
 
 const usePlayerState = create<PlayerState>((set) => ({
-  isVisiblePlayer: false,
+  isVisiblePlayer: true,
   setIsVisible: (isVisiblePlayer) => set({ isVisiblePlayer }),
 }));
 
