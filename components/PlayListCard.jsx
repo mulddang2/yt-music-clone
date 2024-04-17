@@ -6,8 +6,10 @@ import { useRouter } from 'next/navigation';
 import { MdMoreVert } from 'react-icons/md';
 import { FiPlay } from 'react-icons/fi';
 import IconButton from './elements/IconButton';
+import usePlayerState from '@/hooks/usePlayerState';
 
-const PlayListCard = ({ playlist }) => {
+const PlayListCard = ({ playlist = {} } = {}) => {
+  const { addSongList } = usePlayerState();
   const { push } = useRouter();
 
   const { id, owner = '', playlistName = '', songList = [] } = playlist ?? {};
@@ -19,8 +21,9 @@ const PlayListCard = ({ playlist }) => {
     if (id) push(`/playlist?list=${id}`);
   };
 
-  const onClickPlay = () => {
-    // TODO: play
+  const onClickPlay = (e) => {
+    e.stopPropagation();
+    addSongList(songList);
   };
 
   return (
@@ -34,7 +37,6 @@ const PlayListCard = ({ playlist }) => {
           fill={true}
           alt='thumbnail'
           className='object-cover rounded-md'
-          
         />
         <div className='hidden relative group-hover:block bg-gradient-to-b from-[rgba(0,0,0,0.7)] top-0 w-full h-[136px]'>
           <div className='absolute top-2 right-4'>
