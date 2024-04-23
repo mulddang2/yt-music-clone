@@ -1,12 +1,12 @@
 'use client';
-import React, { useMemo } from 'react';
-import { GoHome } from 'react-icons/go';
-import { FiCompass, FiMusic, FiPlus } from 'react-icons/fi';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { dummyPlaylistArray } from '@/lib/dummyData';
 import PlaylistNav from '@/components/elements/PlaylistNav';
+import { dummyPlaylistArray } from '@/lib/dummyData';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useMemo } from 'react';
+import { FiCompass, FiMusic, FiPlus } from 'react-icons/fi';
+import { GoHome } from 'react-icons/go';
 const Navigator = () => {
   const pathname = usePathname();
   // console.log('>>pathname', pathname);

@@ -1,16 +1,12 @@
 'use client';
+import usePlayerState from '@/hooks/usePlayerState';
 import { TopSong } from '@/types';
 import Image from 'next/image';
 import React from 'react';
+import { AiOutlineCaretDown, AiOutlineCaretUp } from 'react-icons/ai';
 import { FaCircle } from 'react-icons/fa';
-import { AiOutlineCaretDown } from 'react-icons/ai';
-import { AiOutlineCaretUp } from 'react-icons/ai';
-import { FiPlayCircle } from 'react-icons/fi';
-import { FiThumbsDown } from 'react-icons/fi';
-import { FiThumbsUp } from 'react-icons/fi';
-import { FiMoreVertical } from 'react-icons/fi';
+import { FiMoreVertical, FiPlayCircle, FiThumbsDown, FiThumbsUp } from 'react-icons/fi';
 import IconButton from './elements/IconButton';
-import usePlayerState from '@/hooks/usePlayerState';
 
 interface SongCardProps {
   song: TopSong;

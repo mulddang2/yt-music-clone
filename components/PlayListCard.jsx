@@ -1,12 +1,11 @@
 'use client';
-import React from 'react';
-import Image from 'next/image';
-import { getRandomElementFromArray } from '@/lib/utils';
-import { useRouter } from 'next/navigation';
-import { MdMoreVert } from 'react-icons/md';
-import { FiPlay } from 'react-icons/fi';
-import IconButton from './elements/IconButton';
 import usePlayerState from '@/hooks/usePlayerState';
+import { getRandomElementFromArray } from '@/lib/utils';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { FiPlay } from 'react-icons/fi';
+import { MdMoreVert } from 'react-icons/md';
+import IconButton from './elements/IconButton';
 
 const PlayListCard = ({ playlist = {} } = {}) => {
   const { addSongList } = usePlayerState();

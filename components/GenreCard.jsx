@@ -1,5 +1,4 @@
 import { generateRandomHex } from '@/lib/utils';
-import React from 'react';
 
 const GenreCard = ({ genre }) => {
   const hex = generateRandomHex();

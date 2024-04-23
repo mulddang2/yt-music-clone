@@ -1,9 +1,9 @@
 'use client';
-import React from 'react';
-import Navigator from './elements/Navigator';
-import Logo from './elements/Logo';
 import usePlayerState from '@/hooks/usePlayerState';
 import { cn } from '@/lib/utils';
+import React from 'react';
+import Logo from './elements/Logo';
+import Navigator from './elements/Navigator';
 
 const Sidebar = ({ children }) => {
   const { isVisiblePlayer } = usePlayerState();

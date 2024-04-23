@@ -1,5 +1,3 @@
-import { TopSong } from '@/types';
-import React from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -7,10 +5,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import React from 'react';
 
-import PlayListCard from './PlayListCard';
 import { chunkArray } from '@/lib/utils';
-import SongCard from './SongCard';
 import GenreCard from './GenreCard';
 
 interface SongListCarouselProps {

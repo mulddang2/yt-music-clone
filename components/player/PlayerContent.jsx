@@ -1,19 +1,19 @@
 'use client';
-import { useCallback, useEffect } from 'react';
 import { Slider as PlayerSlider } from '@/components/ui/playerSlider';
-import { useAudio } from 'react-use';
+import usePlayerState from '@/hooks/usePlayerState';
+import Image from 'next/image';
+import { useCallback, useEffect } from 'react';
+import { AiFillCaretUp, AiOutlinePause } from 'react-icons/ai';
 import {
   IoPlaySkipBackSharp,
   IoPlaySkipForwardSharp,
   IoShuffle,
   IoVolumeHighOutline,
 } from 'react-icons/io5';
-import { AiFillCaretUp, AiOutlinePause } from 'react-icons/ai';
-import usePlayerState from '@/hooks/usePlayerState';
-import { ClipLoader } from 'react-spinners';
 import { RiPlayFill } from 'react-icons/ri';
-import Image from 'next/image';
 import { RxLoop } from 'react-icons/rx';
+import { ClipLoader } from 'react-spinners';
+import { useAudio } from 'react-use';
 
 const PlayerContent = () => {
   const { activeSong, prevPlayerQueue, nextPlayerQueue, playBack, playNext } =

@@ -1,12 +1,12 @@
 'use client';
 
-import { FiFolderPlus, FiMoreVertical, FiPlay } from 'react-icons/fi';
-import IconButton from './elements/IconButton';
-import Image from 'next/image';
-import { getRandomElementFromArray } from '@/lib/utils';
-import WhiteButton from './elements/WhiteButton';
-import DarkButton from './elements/DarkButton';
 import usePlayerState from '@/hooks/usePlayerState';
+import { getRandomElementFromArray } from '@/lib/utils';
+import Image from 'next/image';
+import { FiFolderPlus, FiMoreVertical, FiPlay } from 'react-icons/fi';
+import DarkButton from './elements/DarkButton';
+import IconButton from './elements/IconButton';
+import WhiteButton from './elements/WhiteButton';
 
 const PlayListHead = ({ playlist = {} } = {}) => {
   const { playlistName, owner, songList } = playlist;

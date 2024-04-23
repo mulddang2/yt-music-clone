@@ -1,10 +1,9 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import { IoCloseOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from 'react-icons/rx';
 import IconButton from './IconButton';
-import { IoCloseOutline } from "react-icons/io5";
 
 const Logo = ({isInDrawer = false, onClickClose = () => {}}) => {
   const { push } = useRouter();

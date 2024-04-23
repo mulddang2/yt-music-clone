@@ -1,24 +1,17 @@
 'use client';
-import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
-import UserIcon from '@/components/UserIcon';
 import PagePadding from '@/components/PagePadding';
+import UserIcon from '@/components/UserIcon';
+import {
+  Drawer, DrawerContent, DrawerTrigger
+} from '@/components/ui/drawer';
+import useUIState from '@/hooks/useUIState';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import { FaChromecast } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from '@/components/ui/drawer';
 import Logo from './elements/Logo';
 import Navigator from './elements/Navigator';
-import { cn } from '@/lib/utils';
-import useUIState from '@/hooks/useUIState';
 
 const HeaderDrawer = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);

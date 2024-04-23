@@ -1,6 +1,5 @@
 'use client';
 import usePlayerState from '@/hooks/usePlayerState';
-import React from 'react';
 import PlayerContent from './PlayerContent';
 
 const PlayerWrapper = () => {
